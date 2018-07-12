@@ -1,0 +1,12 @@
+version: '2.1'
+
+services:
+  godocapi:
+    image: godocapi
+    build: .
+    security_opt:
+      - seccomp:unconfined
+#    entrypoint: dlv debug github.com/godocapi -l 0.0.0.0:2345 --headless=true --log=true -- server
+    ports:
+      - "2345:2345"
+      - "8080:8080"

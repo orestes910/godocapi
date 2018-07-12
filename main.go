@@ -32,6 +32,7 @@ func main() {
 			c.String(http.StatusBadRequest, "%s", "Queries may only contain letters\n")
 		} else {
 			if sub != "" {
+				arg := 
 				cmd := exec.Command("/usr/local/go/bin/godoc", pkg+"/"+sub, fn)
 				cmdOut, cmdErr := cmd.CombinedOutput()
 				if cmdErr != nil {
